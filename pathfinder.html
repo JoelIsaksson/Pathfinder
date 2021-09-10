@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<style type="text/css">
+
+		.active{
+			background: rgb(234, 234, 174);
+		}
+
+		body{
+		    -webkit-touch-callout: none;
+		    -webkit-user-select: none;
+		    -khtml-user-select: none;
+		    -moz-user-select: none;
+		    -ms-user-select: none;
+		    user-select: none;
+		}
+		.textBox{
+			background: beige;
+			width: 720px;
+			margin: auto;
+		}
+
+		.menuTitle{
+			background: beige;
+		}
+
+		.menuText{
+			background: beige;
+			margin-top: 2px;
+		}
+
+		.tools{
+
+		}
+
+		.toolText{
+			background: beige;
+			display: inline;
+			margin: auto;
+		}
+
+		.sizeText{
+			background: beige;
+			font-weight: bolder;
+			display: inline;
+			margin: auto;
+		}
+
+		.menu{
+			position: absolute;
+			right: 5px;
+			top: 7px;
+			background-color: beige;
+			width: 10%;
+			margin-bottom: 100%;
+		}
+
+		.active{
+			background: rgb(234, 234, 174);
+		}
+
+	</style>
+</head>
+<body oncontextmenu="return false;" style="text-align: center;background-color: rgb(5, 10, 20);">
+	<h2 id = "topText" class="textBox">Editing: Blocks</h2>
+	<canvas id="canvas" width="720" height="720" style="border: 1px solid black;" ></canvas>
+	<h2 onclick="defaultAlgorithm()" id = "defaultPath" class="textBox active">Dijkstra's algorithm</h2>
+	<h2 onclick="aStarAlgorithm()"id = "aStarPath" class="textBox">A* algorithm</h2>
+
+	<div class="menu">
+		<h2 class="menuTitle">Menu</h2>
+
+		<p style="font-weight: bold;">Diagonal Movement</p>
+		<div class="tools">
+			<p class="sizeText diagonal" id = "yes" onclick="setDiagonalMovementTrue()">  Yes  </p>
+			<p class="sizeText diagonal active" id = "no" onclick="setDiagonalMovementFalse()">  No  </p>
+
+		</div>
+
+		<p style="font-weight: bold;">Tools</p>
+		<div class="tools">
+			<p class="toolText active" id="BLOCK">Block  </p>
+			<p class="toolText" id="START">Start  </p>
+			<p class="toolText" id="END">End   </p>
+		</div>
+		<div class="size">
+			<p class="sizeText" onclick="decreaseToolSize()">  -  </p>
+			<p class="sizeText" id="toolSize"> 1 </p>
+			<p class="sizeText" onclick="increaseToolSize()">  +  </p>
+
+		</div>
+		<p style="font-weight: bold;">Cell Size</p>
+		<div class="size">
+			<p class="sizeText" onclick="decreaseCellSize()">  -  </p>
+			<p class="sizeText" id="cellSize"> 10 </p>
+			<p class="sizeText" onclick="increaseCellSize()">  +  </p>
+
+		</div>
+		<p style="font-weight: bold;">Draw Frequency</p>
+		<div class="size">
+			<p class="sizeText" onclick="decreaseDrawFrequency()">  -  </p>
+			<p class="sizeText" id="drawFrequency"> 100 </p>
+			<p class="sizeText" onclick="increaseDrawFrequency()">  +  </p>
+
+		</div>
+		
+	</div>
+</body>
+<script src="pathfinder.js"></script>
+</html> 
