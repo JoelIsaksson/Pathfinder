@@ -2,6 +2,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
+	<title>Pathfinder</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<style type="text/css">
@@ -67,9 +68,10 @@
 </head>
 <body oncontextmenu="return false;" style="text-align: center;background-color: rgb(5, 10, 20);">
 	<h2 id = "topText" class="textBox">Editing: Blocks</h2>
-	<canvas id="canvas" width="720" height="720" style="border: 1px solid black;" ></canvas>
+	<canvas id="canvas" width="768" height="768" style="border: 1px solid black;" ></canvas>
 	<h2 onclick="defaultAlgorithm()" id = "defaultPath" class="textBox active">Dijkstra's algorithm</h2>
 	<h2 onclick="aStarAlgorithm()"id = "aStarPath" class="textBox">A* algorithm</h2>
+	<h2 onclick="quadStarAlgorithm()"id = "quadStarPath" class="textBox">Quad Tree A* algorithm</h2>
 
 	<div class="menu">
 		<h2 class="menuTitle">Menu</h2>
@@ -96,7 +98,7 @@
 		<p style="font-weight: bold;">Cell Size</p>
 		<div class="size">
 			<p class="sizeText" onclick="decreaseCellSize()">  -  </p>
-			<p class="sizeText" id="cellSize"> 10 </p>
+			<p class="sizeText" id="cellSize"> 8 </p>
 			<p class="sizeText" onclick="increaseCellSize()">  +  </p>
 
 		</div>
